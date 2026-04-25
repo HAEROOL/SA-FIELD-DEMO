@@ -45,3 +45,5 @@ certificates
 REVIEW_REPORT.md
 .gitignore
 .chroma_db/chroma.sqlite3
+.omc
+docs

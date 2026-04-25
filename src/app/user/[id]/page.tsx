@@ -7,6 +7,8 @@ import { userService } from "@/apis/userService";
 import TopAdBanner from "@/components/ads/TopAdBanner";
 import UserDetailAds from "@/components/ads/UserDetailAds";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{
     id: string;

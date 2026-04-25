@@ -9,6 +9,8 @@ import LeagueRanking from "@/components/home/LeagueRanking";
 import MainLayout from "@/components/layout/MainLayout";
 import TopAdBanner from "@/components/ads/TopAdBanner";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const queryClient = getQueryClient();
 
