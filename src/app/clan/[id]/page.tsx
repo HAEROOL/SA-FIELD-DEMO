@@ -2,11 +2,9 @@ import ClanHeader from "@/components/clan/ClanHeader";
 import ClanSeasonStats from "@/components/clan/ClanSeasonStats";
 import ClanRecentGames from "@/components/clan/ClanRecentGames";
 import ClanContent from "@/components/clan/ClanContent";
-import { clanService } from "@/apis/clanService";
+import { getClanInfo } from "@/mocks/serverFetch";
 import MainLayout from "@/components/layout/MainLayout";
 import TopAdBanner from "@/components/ads/TopAdBanner";
-
-export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{
@@ -18,13 +16,7 @@ export default async function ClanPage({ params }: PageProps) {
   const { id } = await params;
   const clanId = parseInt(id, 10);
 
-  // Fetch clan info on server
-  let clanInfo = undefined;
-  try {
-    clanInfo = await clanService.getClanInfo(id);
-  } catch (error) {
-    console.error("Failed to fetch clan info:", error);
-  }
+  const clanInfo = (await getClanInfo(id)) ?? undefined;
 
   return (
     <MainLayout>

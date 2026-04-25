@@ -2,14 +2,11 @@ import SearchSection from "@/components/home/SearchSection";
 import Image from "next/image";
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import getQueryClient from "./getQueryClient";
-import { postService } from "@/apis/postService";
-import { leagueService } from "@/apis/leagueService";
+import { getTopRankings, getTrendingPosts } from "@/mocks/serverFetch";
 import TrendingPosts from "@/components/home/TrendingPosts";
 import LeagueRanking from "@/components/home/LeagueRanking";
 import MainLayout from "@/components/layout/MainLayout";
 import TopAdBanner from "@/components/ads/TopAdBanner";
-
-export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const queryClient = getQueryClient();
@@ -17,13 +14,13 @@ export default async function Home() {
   // Prefetch Trending Posts
   await queryClient.prefetchQuery({
     queryKey: ["posts", "trending", 0, 3],
-    queryFn: () => postService.getTrendingPosts(0, 3),
+    queryFn: () => getTrendingPosts(0, 3),
   });
 
   // Prefetch League Ranking
   await queryClient.prefetchQuery({
     queryKey: ["league", "top"],
-    queryFn: leagueService.getTopRankings,
+    queryFn: getTopRankings,
   });
 
   const dehydratedState = dehydrate(queryClient);

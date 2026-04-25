@@ -3,11 +3,9 @@ import UserHeader from "@/components/user/UserHeader";
 import UserRecord from "@/components/user/UserRecord";
 import RecentGames from "@/components/user/RecentGames";
 import SeasonStats from "@/components/user/SeasonStats";
-import { userService } from "@/apis/userService";
+import { getPlayerInfo } from "@/mocks/serverFetch";
 import TopAdBanner from "@/components/ads/TopAdBanner";
 import UserDetailAds from "@/components/ads/UserDetailAds";
-
-export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{
@@ -18,12 +16,7 @@ interface PageProps {
 export default async function UserPage({ params }: PageProps) {
   const { id } = await params;
 
-  let playerInfo = undefined;
-  try {
-    playerInfo = await userService.getPlayerInfo(id);
-  } catch (error) {
-    console.error("Failed to fetch user info:", error);
-  }
+  const playerInfo = (await getPlayerInfo(id)) ?? undefined;
 
   if (!playerInfo) {
     return (
