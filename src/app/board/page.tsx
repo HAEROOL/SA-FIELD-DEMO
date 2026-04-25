@@ -6,7 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import MainLayout from "@/components/layout/MainLayout";
 import BoardHeader from "@/components/board/BoardHeader";
 import BoardList from "@/components/board/BoardList";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import { BoardType } from "@/apis/types/post.type";
 import AsyncBoundary from "@/components/common/AsyncBoundary";
 
@@ -39,7 +40,7 @@ function BoardContent() {
   return (
     <MainLayout>
       {/* Top Ad Banner */}
-      <TopAdBanner />
+      {/* <TopAdBanner /> */}
 
       <div className="w-full flex flex-col md:flex-row md:items-start gap-6">
         <BoardHeader

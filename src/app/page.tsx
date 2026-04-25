@@ -6,7 +6,8 @@ import { getTopRankings, getTrendingPosts } from "@/mocks/serverFetch";
 import TrendingPosts from "@/components/home/TrendingPosts";
 import LeagueRanking from "@/components/home/LeagueRanking";
 import MainLayout from "@/components/layout/MainLayout";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 
 export default async function Home() {
   const queryClient = getQueryClient();
@@ -95,7 +96,7 @@ export default async function Home() {
         {/* Main Content Layout */}
         <MainLayout>
           {/* Top Ad Banner */}
-          <TopAdBanner />
+          {/* <TopAdBanner /> */}
 
           {/* Main Content Split */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

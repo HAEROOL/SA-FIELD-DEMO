@@ -5,7 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import MainLayout from "@/components/layout/MainLayout";
 import BoardHeader from "@/components/board/BoardHeader";
 import BoardWrite from "@/components/board/BoardWrite";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import AsyncBoundary from "@/components/common/AsyncBoundary";
 
 function BoardWriteContent() {
@@ -35,7 +36,7 @@ function BoardWriteContent() {
 export default function BoardWritePage() {
   return (
     <MainLayout>
-      <TopAdBanner />
+      {/* <TopAdBanner /> */}
       <Suspense>
         <BoardWriteContent />
       </Suspense>

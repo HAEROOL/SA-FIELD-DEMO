@@ -4,7 +4,8 @@ import ClanRecentGames from "@/components/clan/ClanRecentGames";
 import ClanContent from "@/components/clan/ClanContent";
 import { getClanInfo } from "@/mocks/serverFetch";
 import MainLayout from "@/components/layout/MainLayout";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 
 interface PageProps {
   params: Promise<{
@@ -22,9 +23,9 @@ export default async function ClanPage({ params }: PageProps) {
     <MainLayout>
       <div className="flex flex-col w-full">
         {/* Mobile Ad Banner */}
-        <div className="md:hidden flex justify-center mb-6">
+        {/* <div className="md:hidden flex justify-center mb-6">
           <TopAdBanner />
-        </div>
+        </div> */}
 
         {/* Top Section: Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-10 gap-6 mb-6">

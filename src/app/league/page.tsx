@@ -3,7 +3,8 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import MainLayout from "@/components/layout/MainLayout";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import LeagueHeader from "@/components/league/LeagueHeader";
 import LeagueRanking from "@/components/league/LeagueRanking";
 
@@ -18,9 +19,9 @@ function LeagueContent() {
   return (
     <>
       {/* Top Ad Banner (Tablet Only: Above Header) */}
-      <div className="hidden md:flex xl:hidden justify-center mb-6">
+      {/* <div className="hidden md:flex xl:hidden justify-center mb-6">
         <TopAdBanner />
-      </div>
+      </div> */}
 
       <LeagueHeader />
       <LeagueRanking

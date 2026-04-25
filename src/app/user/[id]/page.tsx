@@ -4,8 +4,9 @@ import UserRecord from "@/components/user/UserRecord";
 import RecentGames from "@/components/user/RecentGames";
 import SeasonStats from "@/components/user/SeasonStats";
 import { getPlayerInfo } from "@/mocks/serverFetch";
-import TopAdBanner from "@/components/ads/TopAdBanner";
-import UserDetailAds from "@/components/ads/UserDetailAds";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
+// import UserDetailAds from "@/components/ads/UserDetailAds";
 
 interface PageProps {
   params: Promise<{
@@ -32,9 +33,9 @@ export default async function UserPage({ params }: PageProps) {
     <MainLayout>
       <div className="space-y-6 mb-6">
         {/* Mobile Ad Banner */}
-        <div className="md:hidden flex justify-center">
+        {/* <div className="md:hidden flex justify-center">
           <TopAdBanner />
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-10 gap-6">
           {/* 시즌 전체 정보 - Mobile Order: 2 */}
@@ -55,9 +56,9 @@ export default async function UserPage({ params }: PageProps) {
             </div>
 
             {/* Ads - Mobile Order: 4 (Inside grid row) */}
-            <div className="order-4 mt-6 md:mt-0">
+            {/* <div className="order-4 mt-6 md:mt-0">
                <UserDetailAds />
-            </div>
+            </div> */}
           </div>
         </div>
 

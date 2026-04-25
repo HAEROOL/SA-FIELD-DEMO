@@ -2,7 +2,8 @@
 
 import { Suspense } from "react";
 import MainLayout from "@/components/layout/MainLayout";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import RankingHeader from "@/components/ranking/RankingHeader";
 import PersonalRanking from "@/components/ranking/PersonalRanking";
 
@@ -17,9 +18,9 @@ export default function RankingPage() {
         }
       >
         {/* Top Ad Banner (Tablet Only: Above Header) */}
-        <div className="hidden md:flex xl:hidden justify-center mb-6">
+        {/* <div className="hidden md:flex xl:hidden justify-center mb-6">
           <TopAdBanner />
-        </div>
+        </div> */}
 
         <RankingHeader />
         <PersonalRanking />

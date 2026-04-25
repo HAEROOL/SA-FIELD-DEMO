@@ -6,7 +6,8 @@ import MainLayout from "@/components/layout/MainLayout";
 import BoardHeader from "@/components/board/BoardHeader";
 import BoardWrite from "@/components/board/BoardWrite";
 import { usePost } from "@/hooks/queries/usePosts";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import AsyncBoundary from "@/components/common/AsyncBoundary";
 import { postService } from "@/apis/postService";
 import PasswordVerifyForm from "@/components/board/PasswordVerifyForm";
@@ -63,7 +64,7 @@ export default function BoardEditPage() {
 
   return (
     <MainLayout>
-      <TopAdBanner />
+      {/* <TopAdBanner /> */}
       <div className="w-full flex flex-col md:flex-row gap-6">
         <BoardHeader
           activeBoard={from}

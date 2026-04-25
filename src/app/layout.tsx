@@ -55,11 +55,13 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        {/* 데모 환경에서는 광고 비활성화
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832669420161005"
           crossOrigin="anonymous"
         />
+        */}
       </head>
       <body
         suppressHydrationWarning

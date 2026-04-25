@@ -4,7 +4,8 @@ import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import MainLayout from "@/components/layout/MainLayout";
 import BoardHeader from "@/components/board/BoardHeader";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import { postService } from "@/apis/postService";
 import { useDeletePost } from "@/hooks/mutations/usePost";
 import PasswordVerifyForm from "@/components/board/PasswordVerifyForm";
@@ -55,7 +56,7 @@ export default function BoardDeletePage() {
 
   return (
     <MainLayout>
-      <TopAdBanner />
+      {/* <TopAdBanner /> */}
       <div className="w-full flex flex-col md:flex-row gap-6">
         <BoardHeader
           activeBoard={from}

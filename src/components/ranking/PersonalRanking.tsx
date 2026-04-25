@@ -6,7 +6,8 @@ import { LeaguePlayer } from "@/apis/types/league.type";
 import PlayerRankingTable, {
   PlayerRankingItem,
 } from "@/components/ranking/PlayerRankingTable";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import { calculateWinRate } from "@/utils/stats";
 
 const ITEMS_PER_PAGE = 20;
@@ -76,9 +77,9 @@ export default function PersonalRanking() {
   return (
     <div className="flex flex-col gap-2">
       {/* Top Banner (Mobile & Desktop: Between Header and Table) */}
-      <div className="flex md:hidden xl:flex justify-center mb-6">
+      {/* <div className="flex md:hidden xl:flex justify-center mb-6">
         <TopAdBanner />
-      </div>
+      </div> */}
 
       <div className="bg-white dark:bg-brand-800 border-x border-b border-gray-200 dark:border-gray-700 shadow-sm">
         {/* Table */}
