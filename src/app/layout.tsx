@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import DemoBanner from "@/components/layout/DemoBanner";
 import Providers from "./providers";
 
 const pretendard = localFont({
@@ -65,6 +66,7 @@ export default function RootLayout({
         className={`${pretendard.variable} antialiased bg-brand-50 dark:bg-brand-900 text-gray-800 dark:text-gray-200 font-sans min-h-screen flex flex-col transition-colors duration-300`}
       >
         <Providers>
+          <DemoBanner />
           <Navbar />
           {children}
           <Footer />
