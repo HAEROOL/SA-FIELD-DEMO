@@ -7,7 +7,8 @@ import { LeagueClan } from "@/apis/types/league.type";
 import ClanRankingTable, {
   ClanRankingItem,
 } from "@/components/league/ClanRankingTable";
-import TopAdBanner from "@/components/ads/TopAdBanner";
+// 데모 환경에서는 광고 비활성화
+// import TopAdBanner from "@/components/ads/TopAdBanner";
 import { calculateWinRate } from "@/utils/stats";
 
 interface LeagueRankingProps {
@@ -77,9 +78,9 @@ export default function LeagueRanking({
   return (
     <div className="flex flex-col gap-2">
       {/* Top Banner (Mobile & Desktop: Between Header and Table) */}
-      <div className="flex md:hidden xl:flex justify-center mb-6">
+      {/* <div className="flex md:hidden xl:flex justify-center mb-6">
         <TopAdBanner />
-      </div>
+      </div> */}
 
       {/* Division Tabs */}
       <div className="flex justify-start gap-2">
